@@ -1,9 +1,11 @@
 import pymorphy2
 import re
 
-s = "Я люблю красное, красивое яблоко."
-s = re.sub(r'[^\w\s]','',s)  # удаление пунктуации
-lst = s.split()  # текст разбит по словам
+
+handle = open("text.txt", "r")
+data = handle.read()
+data = re.sub(r'[^\w\s]','', data)  # удаление пунктуации
+lst = data.split()  # текст разбит по словам
 
 morph = pymorphy2.MorphAnalyzer()
 
@@ -13,7 +15,6 @@ countVERB = 0
 
 for i in lst:
     l = morph.parse(i)[0]
-    print(l.tag.POS)
     if l.tag.POS == ('ADJF' or 'ADJS'):
         countADJ += 1  # подсчет прилагательных
     elif l.tag.POS == 'ADVB':
@@ -21,4 +22,10 @@ for i in lst:
     elif l.tag.POS == ('VERB' or 'INFN'):
         countVERB += 1  # подсчет глаголов
 
-print(countADJ)
+print('В тексте найдено: '
+      + str(countADJ) + ' прилагательных, '
+      + str(countADVERB) + ' наречий, '
+      + str(countVERB) + ' глаголов')
+
+handle.close()
+
