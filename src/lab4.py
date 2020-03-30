@@ -1,7 +1,7 @@
 import pymorphy2
 import re
 
-data = 'Дай, Джим, на счастье лапу мне, Такую лапу не видал я сроду. Давай с тобой полаем при луне На тихую, бесшумную: погоду.'
+# data = 'Дай, Джим, на счастье лапу мне, Такую лапу не видал я сроду'
 
 
 def lab4(data):
@@ -10,9 +10,9 @@ def lab4(data):
 
     morph = pymorphy2.MorphAnalyzer()
 
-    countADJ = 0
-    countADVERB = 0
-    countVERB = 0
+    countADJ = 0  # подсчет прилагательных
+    countADVERB = 0  # подсчет наречий
+    countVERB = 0  # подсчет глаголов
 
     for i in lst:
         l = morph.parse(i)[0]
@@ -23,13 +23,13 @@ def lab4(data):
         elif l.tag.POS == ('VERB' or 'INFN'):
             countVERB += 1  # подсчет глаголов
 
-    print('В тексте найдено: '
-          + str(countADJ) + ' прилагательных, '
-          + str(countADVERB) + ' наречий, '
-          + str(countVERB) + ' глаголов')
+    # print('В тексте найдено: '
+    #       + str(countADJ) + ' прилагательных, '
+    #       + str(countADVERB) + ' наречий, '
+    #       + str(countVERB) + ' глаголов')
 
     return countADJ, countADVERB, countVERB
 
 
-print(lab4(data))
+# print(lab4(data))
 
