@@ -1,4 +1,4 @@
 language: python
 
 script:
-  - py.test -v src.py_tests/
+  - src.py_tests/
