@@ -1,4 +1,4 @@
 language: python
 
 script:
-  - python test_lab4.py
+  - python src.py_tests.test_lab4.py
