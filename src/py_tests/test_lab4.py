@@ -1,8 +1,8 @@
-import unittest
+import unittest2
 from src.lab4 import *
 
 
-class TestLab4(unittest.TestCase):
+class TestLab4(unittest2.TestCase):
     def testADJ(self):
         self.assertEqual(lab4('Красивый, счастливый, зеленый!'), (3, 0, 0))
 
@@ -17,4 +17,4 @@ class TestLab4(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest2.main()
