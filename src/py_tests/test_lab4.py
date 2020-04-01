@@ -13,7 +13,7 @@ class TestLab4(unittest2.TestCase):
         self.assertEqual(lab4('Лает он, кусает. Прыгает и играет'), (0, 0, 4))
 
     def testJim(self):
-        self.assertEqual(lab4('Дай, Джим, на счастье лапу мне, Такую лапу не видал я сроду. '), (1, 1, 2))
+        self.assertEqual(lab4('Дай, Джим, на счастье лапу мне, Такую лапу не видал я сроду. '), (1, 4, 2))
 
 
 if __name__ == '__main__':
